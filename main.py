@@ -8,11 +8,21 @@ print(NATO)
 
 word = input("Enter a word: ").upper()
 
-word_split = list(word.upper())
+def display_NATO():
+    output_dict = []
+    for letter in word:
+        if letter in NATO:
+            output_dict.append(NATO[letter])
+        else:
+            print(f"You entered an invalid character: {letter} ")
+    print(output_dict)
 
-# output_dict = [NATO[letter] for letter in word]
-# print(output_dict)
+# word_split = list(word.upper())
+try:
+    display_NATO()
+except KeyError:
+    print("Please enter a valid word with alphabetic characters.")
 
-for letter in word_split:
-    if letter in NATO:
-        print(NATO[letter])
+# for letter in word_split:
+#     if letter in NATO:
+#         print(NATO[letter])
